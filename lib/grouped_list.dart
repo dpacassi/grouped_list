@@ -7,7 +7,7 @@ import 'package:flutter/widgets.dart';
 class GroupedListView<T, E> extends StatefulWidget {
   final E Function(T element) groupBy;
   final Widget Function(E value) groupSeparatorBuilder;
-  final Widget Function(BuildContext context, T element) itemBuilder;
+  final Widget Function(BuildContext context, T element, int index) itemBuilder;
   final GroupedListOrder order;
   final bool sort;
   final bool useStickyGroupSeparators;
@@ -117,7 +117,7 @@ class _GroupedLisdtViewState<T, E> extends State<GroupedListView<T, E>> {
     _keys['$actualIndex'] = key;
     return Container(
         key: key,
-        child: widget.itemBuilder(context, _sortedElements[actualIndex]));
+        child: widget.itemBuilder(context, _sortedElements[actualIndex], actualIndex));
   }
 
   ScrollController _getController() {

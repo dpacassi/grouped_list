@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             )),
           ),
-          itemBuilder: (c, element) {
+          itemBuilder: (c, element, index) {
             return Card(
               elevation: 8.0,
               margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
